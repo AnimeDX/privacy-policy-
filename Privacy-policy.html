@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Service — Ani Bot</title>
-  <meta name="description" content="Terms of Service for the Anime Discord Bot - Ani Bot" />
+  <title>Privacy Policy — Ani Bot</title>
+  <meta name="description" content="Privacy Policy for the Anime Discord Bot - Ani Bot" />
   <style>
     :root {
       --primary: #0099ff;
@@ -122,14 +122,29 @@
       border: 1px solid #2d333b;
     }
     
-    .card {
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
       background: rgba(13, 17, 23, 0.6);
-      border-left: 4px solid var(--primary);
-      padding: 1.5rem;
-      border-radius: 0 12px 12px 0;
-      margin: 1.8rem 0;
-      border: 1px solid rgba(0, 153, 255, 0.2);
-      border-left-width: 4px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    
+    .data-table th {
+      background: var(--primary);
+      color: white;
+      padding: 12px;
+      text-align: left;
+    }
+    
+    .data-table td {
+      padding: 12px;
+      border-bottom: 1px solid #2d333b;
+    }
+    
+    .data-table tr:last-child td {
+      border-bottom: none;
     }
     
     footer {
@@ -145,162 +160,200 @@
       body { padding: 1rem; }
       main { padding: 1.5rem; }
       h1 { font-size: 1.8rem; }
-      h2 { font-size: 1.3rem; }
+      .data-table { font-size: 0.85rem; }
     }
   </style>
 </head>
 <body>
   <main>
     <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
-      <span class="badge">📜 LEGAL</span>
-      <span class="badge" style="background: rgba(255, 107, 107, 0.15); border-color: #ff6b6b;">⚠️ BINDING</span>
+      <span class="badge">🔒 PRIVACY</span>
+      <span class="badge" style="background: rgba(57, 255, 20, 0.15); border-color: #39ff14;">✅ GDPR COMPLIANT</span>
     </div>
     
-    <h1>Terms of Service</h1>
+    <h1>Privacy Policy</h1>
     <div class="update-date">Last Updated: February 11, 2026 • Version 3.0</div>
     
-    <p style="font-size: 1.1rem; margin-top: 2rem;">By inviting, using, or interacting with <strong>Ani Bot</strong> ("the Bot"), you agree to be legally bound by these Terms of Service ("Terms"). If you do not agree with any part of these Terms, you must immediately remove the Bot from your server and cease all use.</p>
+    <p style="font-size: 1.1rem; margin-top: 2rem;">Ani Bot ("we", "us", "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Discord bot. Please read this policy carefully.</p>
 
-    <div class="card">
-      <strong>⚠️ IMPORTANT:</strong> This bot collects and stores certain data as described in Section 4 and our Privacy Policy. By using the bot, you acknowledge and consent to this data collection.
+    <div class="card" style="background: rgba(13, 17, 23, 0.6); border-left: 4px solid #39ff14; padding: 1.5rem; margin: 2rem 0;">
+      <strong>✅ GDPR COMPLIANCE:</strong> If you are a resident of the European Economic Area (EEA), you have specific data protection rights. We comply with GDPR requirements and process your data lawfully, fairly, and transparently.
     </div>
 
-    <h2>1. Service Description</h2>
-    <p>Ani Bot is a Discord bot that provides anime-related features including:</p>
-    <ul>
-      <li><strong>Anime & Character Search:</strong> Search for anime, characters, and related media via Jikan API (MyAnimeList)</li>
-      <li><strong>News System:</strong> Automatic RSS feeds from <code>Anime Corner</code>, <code>Seiyuu Corner</code>, and <code>Warded News</code></li>
-      <li><strong>AFK System:</strong> Temporary AFK status tracking with nickname management</li>
-      <li><strong>Random Anime & Memes:</strong> Genre-filtered random anime and r/animemes integration</li>
-      <li><strong>Schedule & Airing:</strong> Weekly anime schedules and currently airing shows</li>
-      <li><strong>Recommendations:</strong> AI-enhanced similar anime and studio works</li>
-    </ul>
-    <p>All features are provided "AS IS" for entertainment and informational purposes only.</p>
+    <h2>1. Information We Collect</h2>
+    <p>We collect only the minimum data necessary to provide bot functionality. <strong>We DO NOT collect:</strong> email addresses, passwords, payment information, IP addresses, full message content (except commands), or any sensitive personal data.</p>
 
-    <h2>2. Eligibility & User Requirements</h2>
-    <h3>2.1 Age Requirement</h3>
-    <p>You must be at least <strong>13 years of age</strong> to use this Bot. If you are between 13 and 18 years of age, you represent that your legal guardian has reviewed and agreed to these Terms.</p>
+    <h3>1.1 Automatically Collected Data</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Purpose</th>
+          <th>Storage Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>User IDs</strong></td>
+          <td>AFK system, command cooldowns, pagination sessions, user preferences</td>
+          <td>Persistent (until removed) + 5 min cache</td>
+        </tr>
+        <tr>
+          <td><strong>Guild/Server IDs</strong></td>
+          <td>Server-specific prefixes, news channel configurations, AFK data</td>
+          <td>Persistent (until bot is removed)</td>
+        </tr>
+        <tr>
+          <td><strong>Channel IDs</strong></td>
+          <td>News auto-posting system (only for enabled channels)</td>
+          <td>Persistent (until disabled or bot removed)</td>
+        </tr>
+        <tr>
+          <td><strong>AFK Reasons</strong></td>
+          <td>Display AFK status and reason when mentioned</td>
+          <td>Until user returns or bot restarts (persistent backup)</td>
+        </tr>
+        <tr>
+          <td><strong>Meme IDs</strong></td>
+          <td>Avoid duplicate memes from r/animemes</td>
+          <td>60 days (rolling deletion)</td>
+        </tr>
+        <tr>
+          <td><strong>Search Cache</strong></td>
+          <td>Improve response time for anime/character searches</td>
+          <td>5 minutes (auto-deleted)</td>
+        </tr>
+        <tr>
+          <td><strong>Watch Time Cache</strong></td>
+          <td>Store calculated watch times to reduce API calls</td>
+          <td>7 days</td>
+        </tr>
+        <tr>
+          <td><strong>News Sent Items</strong></td>
+          <td>Avoid duplicate news posts in enabled channels</td>
+          <td>100 most recent items per source</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>1.2 Command Data</h3>
+    <p>When you use commands, we process:</p>
+    <ul>
+      <li><strong>Search queries:</strong> Anime titles, character names, studio names (temporarily cached)</li>
+      <li><strong>Suggestion content:</strong> Submitted via <code>/suggest-report</code> (sent to suggestion channel, not stored by bot)</li>
+      <li><strong>Anonymous statistics:</strong> Command names, frequency, error counts (no user identifiers)</li>
+    </ul>
+
+    <h2>2. How We Use Your Information</h2>
+    <p>We use the collected information exclusively for:</p>
+    <ul>
+      <li><strong>✅ Core Functionality:</strong> AFK system, prefix customization, news delivery, pagination</li>
+      <li><strong>✅ Performance Improvement:</strong> Caching to reduce API calls and speed up responses</li>
+      <li><strong>✅ Error Tracking:</strong> Debugging and fixing command errors</li>
+      <li><strong>✅ Spam Prevention:</strong> Command cooldowns to prevent abuse</li>
+      <li><strong>✅ User Experience:</strong> Remembering your AFK status, search history (temporary)</li>
+    </ul>
+    <p><strong>We DO NOT:</strong> sell, rent, trade, or share your data with third parties for marketing purposes. We DO NOT use your data for profiling or automated decision-making.</p>
+
+    <h2>3. Data Storage & Security</h2>
+    <h3>3.1 Storage Location</h3>
+    <p>All data is stored locally on the bot host machine in JSON files within a <code>/data</code> directory. No cloud databases or external storage services are used. The bot host is located in <strong>Asia/Manila timezone</strong>.</p>
     
-    <h3>2.2 Discord Terms</h3>
-    <p>You must comply with Discord's <a href="https://discord.com/terms" target="_blank" rel="noopener">Terms of Service</a> and <a href="https://discord.com/guidelines" target="_blank" rel="noopener">Community Guidelines</a>. Any violation of Discord's terms while using the Bot is your sole responsibility.</p>
-
-    <h2>3. Acceptable Use Policy</h2>
-    <p>You agree <strong>NOT</strong> to:</p>
+    <h3>3.2 Security Measures</h3>
     <ul>
-      <li><strong>🚫 Abuse:</strong> Spam commands, attempt to crash the bot, or perform denial-of-service attacks</li>
-      <li><strong>🚫 Exploitation:</strong> Reverse engineer, decompile, or attempt to extract the bot's source code</li>
-      <li><strong>🚫 Harassment:</strong> Use the bot to harass, stalk, or bully others</li>
-      <li><strong>🚫 Illegal Activity:</strong> Use the bot for any unlawful purpose or in violation of applicable laws</li>
-      <li><strong>🚫 NSFW:</strong> Request or generate NSFW content (the bot strictly filters SFW content)</li>
-      <li><strong>🚫 Impersonation:</strong> Pretend to be the bot developer or authorized representative</li>
-      <li><strong>🚫 API Abuse:</strong> Excessive API calls that could harm Jikan/MyAnimeList or other third-party services</li>
-    </ul>
-    <p>Violation of these rules may result in <strong>immediate blacklisting</strong> of your user ID or server ID without prior warning.</p>
-
-    <h2>4. Data Collection & Privacy</h2>
-    <p>We collect and store the following data to provide functionality:</p>
-    <ul>
-      <li><strong>User IDs:</strong> For AFK system, command cooldowns, and pagination sessions</li>
-      <li><strong>Guild IDs:</strong> For server-specific prefixes and news channel configurations</li>
-      <li><strong>Channel IDs:</strong> For news auto-posting system (when enabled)</li>
-      <li><strong>Command Usage:</strong> Anonymous statistics to improve bot performance</li>
-      <li><strong>AFK Messages:</strong> Temporarily stored AFK reasons and timestamps</li>
-      <li><strong>Meme Tracking:</strong> IDs of previously sent memes to avoid repeats</li>
-      <li><strong>Search Cache:</strong> Temporary cache of anime/character searches (auto-deletes after 5 minutes)</li>
-    </ul>
-    <p><strong>We DO NOT collect:</strong> Email addresses, passwords, payment information, IP addresses, message content (except commands), or any personally identifiable information beyond Discord IDs.</p>
-    <p>For complete details, please read our <a href="privacy-policy.html">Privacy Policy</a>.</p>
-
-    <h2>5. Third-Party Services</h2>
-    <p>Ani Bot relies on these third-party services:</p>
-    <ul>
-      <li><strong><a href="https://jikan.moe" target="_blank" rel="noopener">Jikan API</a> (MyAnimeList):</strong> Anime, character, and studio data</li>
-      <li><strong><a href="https://rss.app" target="_blank" rel="noopener">RSS.app</a>:</strong> News feeds (Anime Corner, Seiyuu Corner, Warded News)</li>
-      <li><strong><a href="https://www.reddit.com/r/animemes" target="_blank" rel="noopener">r/animemes</a>:</strong> Anime meme content</li>
-      <li><strong><a href="https://discord.com" target="_blank" rel="noopener">Discord API</a>:</strong> Core bot functionality</li>
-    </ul>
-    <p>Each service operates under its own terms and privacy policies. The bot developer is not responsible for the availability or accuracy of these third-party services.</p>
-
-    <h2>6. Intellectual Property</h2>
-    <h3>6.1 Bot Ownership</h3>
-    <p>All source code, commands, features, and original content of Ani Bot are the exclusive property of the developer. You may not:</p>
-    <ul>
-      <li>Copy, modify, or distribute the bot's code</li>
-      <li>Self-host or create derivative bots without explicit written permission</li>
-      <li>Claim ownership of the bot or its features</li>
+      <li>Data files are stored with restricted file permissions</li>
+      <li>Bot token is stored in environment variables (.env), NEVER hardcoded</li>
+      <li>No direct public access to data files</li>
+      <li>Regular automated backups are not performed (data is ephemeral)</li>
     </ul>
     
-    <h3>6.2 Anime Content</h3>
-    <p>All anime titles, character names, images, and related metadata are the property of their respective copyright holders. This bot operates under <strong>fair use</strong> for informational and entertainment purposes. If you are a rights holder and believe your content is being used improperly, please contact us immediately for takedown.</p>
-
-    <h2>7. Service Availability & Modifications</h2>
+    <h3>3.3 Data Retention</h3>
     <ul>
-      <li><strong>Uptime:</strong> We strive for high availability but guarantee <strong>no uptime commitment</strong>. The bot may experience downtime for maintenance, updates, or unforeseen issues.</li>
-      <li><strong>Changes:</strong> Features may be added, modified, or removed at any time without notice. This includes command syntax, embed formats, and API endpoints.</li>
-      <li><strong>API Limits:</strong> Jikan API enforces rate limits. If these limits are exceeded, the bot may temporarily disable certain features.</li>
+      <li><strong>AFK Data:</strong> Removed when user returns; persistent backup until bot removal</li>
+      <li><strong>News Configurations:</strong> Stored until bot is removed from server</li>
+      <li><strong>Meme History:</strong> Auto-cleaned after 60 days</li>
+      <li><strong>Cache:</strong> Auto-cleaned after 5 minutes (searches) or 7 days (watchtime)</li>
+      <li><strong>Command Logs:</strong> No persistent logs of individual commands</li>
     </ul>
 
-    <h2>8. Limitation of Liability</h2>
-    <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE BOT DEVELOPER SHALL NOT BE LIABLE FOR:</strong></p>
+    <h2>4. Third-Party Services</h2>
+    <p>Ani Bot interacts with the following third-party services. Each has its own privacy policy:</p>
     <ul>
-      <li>Any indirect, incidental, special, consequential, or punitive damages</li>
-      <li>Loss of data, profits, or server privileges</li>
-      <li>Errors, omissions, or inaccuracies in third-party data</li>
-      <li>Damages resulting from unauthorized access to your Discord server</li>
+      <li><strong><a href="https://jikan.moe/privacy" target="_blank" rel="noopener">Jikan API</a> (MyAnimeList):</strong> Fetches anime/character data. Your search queries are sent to Jikan's servers.</li>
+      <li><strong><a href="https://rss.app/legal/privacy" target="_blank" rel="noopener">RSS.app</a>:</strong> Provides news feeds. No user data is shared with RSS.app.</li>
+      <li><strong><a href="https://www.reddit.com/help/privacypolicy" target="_blank" rel="noopener">Reddit (r/animemes)</a>:</strong> Fetches meme images. No user data is shared with Reddit.</li>
+      <li><strong><a href="https://discord.com/privacy" target="_blank" rel="noopener">Discord</a>:</strong> Platform itself. We receive Discord IDs and usernames as part of normal API operation.</li>
     </ul>
-    <p>The bot is provided "AS IS" without warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+    <p>We do not control these third-party services and are not responsible for their practices.</p>
 
-    <h2>9. Indemnification</h2>
-    <p>You agree to indemnify, defend, and hold harmless the bot developer, contributors, and affiliates from any claims, damages, liabilities, costs, or expenses arising from:</p>
-    <ul>
-      <li>Your use or misuse of the bot</li>
-      <li>Violation of these Terms</li>
-      <li>Violation of any third-party rights</li>
-      <li>Any content you generate or share using the bot</li>
-    </ul>
-
-    <h2>10. Termination & Blacklisting</h2>
-    <h3>10.1 Voluntary Removal</h3>
-    <p>Server administrators may remove the bot at any time by kicking or banning it from their server. This immediately stops all data collection for that server.</p>
+    <h2>5. Your Rights & Choices</h2>
+    <h3>5.1 Right to Access</h3>
+    <p>You have the right to request a copy of the data we hold about you. Contact us via Discord or email to request your data.</p>
     
-    <h3>10.2 Involuntary Termination</h3>
-    <p>The developer reserves the right to:</p>
+    <h3>5.2 Right to Deletion</h3>
+    <p>You can request deletion of your data by:</p>
     <ul>
-      <li>Blacklist individual users or entire servers without notice</li>
-      <li>Disable specific commands for violators</li>
-      <li>Terminate access for any reason, including but not limited to violation of these Terms</li>
+      <li><strong>Self-service:</strong> Removing the bot from your server deletes all server-specific data (prefixes, news channels, AFK data)</li>
+      <li><strong>Individual deletion:</strong> Contact us to request deletion of your user ID and associated AFK data</li>
     </ul>
-    <p>Blacklisted servers will receive a notification and cannot appeal unless approved by the developer.</p>
+    
+    <h3>5.3 Right to Opt-Out</h3>
+    <p>You can opt out of data collection by not using the bot or removing it from your server. There is no separate opt-out mechanism.</p>
+    
+    <h3>5.4 EEA Residents (GDPR)</h3>
+    <p>If you are in the EEA, you have additional rights:</p>
+    <ul>
+      <li>Right to rectification (correct inaccurate data)</li>
+      <li>Right to restriction of processing</li>
+      <li>Right to data portability</li>
+      <li>Right to object to processing</li>
+      <li>Right to lodge a complaint with a supervisory authority</li>
+    </ul>
 
-    <h2>11. Governing Law</h2>
-    <p>These Terms shall be governed by and construed in accordance with the laws of <strong>the Philippines</strong>, without regard to its conflict of law provisions. Any disputes arising from these Terms shall be resolved exclusively in the courts of the Philippines.</p>
+    <h2>6. Children's Privacy</h2>
+    <p>Ani Bot is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you become aware that a child has provided us with personal information, please contact us immediately. If we discover that a child under 13 has provided us with personal information, we will delete it promptly.</p>
 
-    <h2>12. Changes to Terms</h2>
-    <p>We may update these Terms periodically. The "Last Updated" date at the top of this page reflects the most recent revision. Significant changes will be announced in the bot's official Discord server and via the <code>/updates</code> command. Continued use of the bot after changes constitutes acceptance of the revised Terms.</p>
+    <h2>7. International Data Transfers</h2>
+    <p>Your information may be transferred to and maintained on servers located in <strong>the Philippines</strong>. If you are accessing the bot from outside the Philippines, please be aware that your information may be transferred to, stored, and processed in the Philippines where our servers are located. By using the bot, you consent to this transfer.</p>
 
-    <h2>13. Contact & Reporting</h2>
-    <p>For questions, concerns, or reports regarding these Terms:</p>
+    <h2>8. Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+    <p>Significant changes will be announced in our Discord server and via the <code>/updates</code> command.</p>
+
+    <h2>9. Data Breach Procedure</h2>
+    <p>In the event of a data breach that compromises user data, we will:</p>
+    <ol>
+      <li>Immediately secure affected systems</li>
+      <li>Notify affected users via Discord within 72 hours</li>
+      <li>Document the breach and steps taken to mitigate</li>
+      <li>Report to relevant authorities if required by law</li>
+    </ol>
+
+    <h2>10. Contact Information</h2>
+    <p>For privacy-related inquiries, data requests, or concerns:</p>
     <ul>
       <li><strong>📧 Email:</strong> [Developer Contact Email]</li>
       <li><strong>💬 Discord:</strong> Join our official support server: <a href="https://discord.gg/SRM4djGHa8" target="_blank">https://discord.gg/SRM4djGHa8</a></li>
-      <li><strong>⚠️ DMCA/Copyright:</strong> For takedown requests, please contact us with proof of ownership</li>
+      <li><strong>⏰ Response Time:</strong> Within 48-72 hours</li>
     </ul>
-    <p>We aim to respond within 48-72 hours.</p>
 
-    <div style="background: rgba(255, 193, 7, 0.1); border: 1px solid #ffc107; border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
-      <p style="margin: 0; font-weight: bold;">📋 SUMMARY FOR SERVER ADMINS:</p>
-      <p style="margin: 0.5rem 0 0 0;">By adding Ani Bot to your server, you consent to:</p>
+    <h2>11. Consent</h2>
+    <p>By using Ani Bot, you signify your acceptance of this Privacy Policy. If you do not agree to this policy, please do not use the bot. Your continued use of the bot following the posting of changes to this policy will be deemed your acceptance of those changes.</p>
+
+    <div style="background: rgba(0, 153, 255, 0.1); border: 1px solid var(--primary); border-radius: 12px; padding: 1.5rem; margin: 2rem 0;">
+      <p style="margin: 0; font-weight: bold;">📋 QUICK SUMMARY:</p>
       <ul style="margin-top: 0.5rem;">
-        <li>Storage of server ID, channel IDs (for news), and AFK data</li>
-        <li>Nickname management (AFK system adds/removes 【AFK】 prefix)</li>
-        <li>Automatic posting of news in enabled channels</li>
+        <li>We store: User IDs, Server IDs, Channel IDs (for news), AFK reasons</li>
+        <li>We don't store: Messages, IPs, emails, passwords</li>
+        <li>Data removal: Remove bot = all server data deleted</li>
+        <li>Cache: Auto-deletes after 5 minutes (searches) or 7 days (watchtime)</li>
       </ul>
     </div>
 
     <footer>
       <p>© 2026 Ani Bot — All rights reserved.</p>
       <p style="margin-top: 0.5rem;">
-        <a href="privacy-policy.html" style="color: var(--primary);">Privacy Policy</a> • 
+        <a href="terms-of-service.html" style="color: var(--primary);">Terms of Service</a> • 
         <a href="commands.html" style="color: var(--primary);">Commands</a> • 
         <a href="https://discord.gg/SRM4djGHa8" style="color: var(--primary);">Discord</a>
       </p>
